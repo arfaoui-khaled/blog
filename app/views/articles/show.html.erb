@@ -10,7 +10,7 @@
                   } %></li>
 </ul>
 
-<h2>Comments</h2>
+<!-- <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
@@ -21,10 +21,12 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+<% end %> -->
+
+<%= render @article.comments %>
 
 
-<h2>Add a comment:</h2>
+<!-- <h2>Add a comment:</h2>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   <p>
     <%= form.label :commenter %><br>
@@ -37,4 +39,6 @@
   <p>
     <%= form.submit %>
   </p>
-<% end %>
+<% end %> -->
+
+<%= render comments/form %>
